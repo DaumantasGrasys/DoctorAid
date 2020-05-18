@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.agobal.DoctorAid.Entities.Category;
 import com.agobal.DoctorAid.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -59,8 +58,6 @@ public class ProfileEdit extends AppCompatActivity {
         Button BtnProfileSave= findViewById(R.id.btnSave);
 
         //noinspection unused
-        ArrayList<Category> citiesList = new ArrayList<>();
-
         String firstName= getIntent().getStringExtra("firstName");
         String lastName= getIntent().getStringExtra("lastName");
         String email= getIntent().getStringExtra("email");

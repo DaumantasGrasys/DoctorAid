@@ -71,8 +71,6 @@ public class doctorActiveFragment extends Fragment implements AsyncTaskCompleteL
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_doctor_active, container, false);
-        //SweetAlertDialog pDialog;
-        ProgressBar spinner = v.findViewById(R.id.progressBar1);
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
 

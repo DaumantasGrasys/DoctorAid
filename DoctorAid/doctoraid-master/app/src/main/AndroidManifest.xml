@@ -27,6 +27,21 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name=".helper.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".helper.MyFirebaseInstanceIdService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".helper.SplashActivity"
             android:theme="@style/SplashTheme">
@@ -85,6 +100,7 @@
         </activity>
         <activity android:name=".PrivacyPolicyActivity"></activity>
         <activity android:name=".AccountActivity.UserDataActivity" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
     </application>
 
 
