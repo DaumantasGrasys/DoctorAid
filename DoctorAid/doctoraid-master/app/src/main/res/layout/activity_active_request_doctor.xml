@@ -1,0 +1,167 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    app:cardBackgroundColor="@color/cardview_light_background"
+                    app:cardCornerRadius="20dp"
+                    app:contentPaddingBottom="15dp"
+                    app:contentPaddingLeft="15dp"
+                    app:contentPaddingRight="15dp"
+                    app:contentPaddingTop="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.gms.maps.MapView
+                            android:id="@+id/ard_map"
+                            android:layout_width="match_parent"
+                            android:layout_height="267dp" />
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
+                    app:contentPaddingBottom="15dp"
+                    app:contentPaddingLeft="15dp"
+                    app:contentPaddingRight="15dp"
+                    app:contentPaddingTop="15dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/ard_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text="Vardas Pavarė"
+                            android:textAlignment="center"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/ard_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:text="Adresas"
+                            android:textAlignment="center"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="330dp"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@android:color/darker_gray" />
+
+                        <TextView
+                            android:id="@+id/ard_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:text="Aprašymas"
+                            android:textAlignment="center"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="174dp"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:paddingTop="15dp">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/ard_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    app:fabSize="normal"
+                    app:srcCompat="@drawable/ic_message_white_24dp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/ard_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    app:fabSize="normal"
+                    app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnEnd"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="263dp"
+                android:layout_height="63dp"
+                android:layout_centerHorizontal="true"
+                android:background="#4CAF50"
+                android:text="Baigti užklausą" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    </ScrollView>

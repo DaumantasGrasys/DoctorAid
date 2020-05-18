@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_kvietimas"
+        android:icon="@drawable/ic_store_white_24dp"
+        android:title="Kvietimas" />
+
+    <item
+        android:id="@+id/navigation_pranesimai"
+        android:icon="@drawable/ic_question_answer_black_24dp"
+        android:title="Pranešimai" />
+
+    <item
+        android:id="@+id/navigation_profilis"
+        android:icon="@drawable/ic_person_white_24dp"
+        android:title="Profilis" />
+
+</menu>

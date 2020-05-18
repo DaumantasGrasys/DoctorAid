@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "10004765481",
+    "firebase_url": "https://doctoraid.firebaseio.com",
+    "project_id": "doctoraid",
+    "storage_bucket": "doctoraid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10004765481:android:28a5f6521f7efc9f837538",
+        "android_client_info": {
+          "package_name": "com.aglobal.DoctorAid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10004765481-0qu6dv6fjdekhp2prcgstiigvvhh34ia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbspCreEY-LOM9SAE6dXuQodz8ZX8VPGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10004765481-0qu6dv6fjdekhp2prcgstiigvvhh34ia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10004765481:android:c0cbcb0b9773e2a8837538",
+        "android_client_info": {
+          "package_name": "com.agobal.DoctorAid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10004765481-0qu6dv6fjdekhp2prcgstiigvvhh34ia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbspCreEY-LOM9SAE6dXuQodz8ZX8VPGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10004765481-0qu6dv6fjdekhp2prcgstiigvvhh34ia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

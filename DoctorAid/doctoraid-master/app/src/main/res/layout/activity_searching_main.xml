@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteCardColor"
+    tools:context="com.agobal.DoctorAid.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="189dp"
+            android:layout_below="@+id/btnSearch"
+            android:layout_marginTop="64dp" />
+
+        <Button
+            android:id="@+id/btnHelp"
+            android:layout_width="185dp"
+            android:layout_height="63dp"
+            android:layout_centerHorizontal="true"
+            android:text="Ieškoma Daktaro..." />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/AliceBlue"
+        app:itemBackground="@color/AliceBlue"
+
+        app:itemIconTint="@color/colorPrimaryDark"
+        app:itemTextColor="@android:color/black"
+        app:menu="@menu/navigation" >
+
+    </android.support.design.widget.BottomNavigationView>
+
+    <!-- android:foreground="?attr/selectableItemBackground" -->
+
+</android.support.design.widget.CoordinatorLayout>

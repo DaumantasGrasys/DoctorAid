@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:id="@+id/profEdit"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".AccountActivity.ProfileEdit">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/Black">
+
+        <EditText
+            android:id="@+id/ProfileInputName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:background="@android:color/transparent"
+            android:hint="Vardas"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:textColorHint="@color/Black"
+            tools:ignore="Autofill" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Black" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/Black">
+
+        <EditText
+            android:id="@+id/ProfileInputLastName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:background="@android:color/transparent"
+            android:hint="Pavardė"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:textColorHint="@color/Black"
+            tools:ignore="Autofill" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#05070a" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/Black">
+
+        <EditText
+            android:id="@+id/ProfileInputEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:background="@android:color/transparent"
+            android:hint="El. paštas"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textColorHint="@color/Black"
+            tools:ignore="Autofill" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Black" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/Black">
+
+        <EditText
+            android:id="@+id/ProfileInputUsername"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:background="@android:color/transparent"
+            android:hint="Vartotojo Vardas"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:textColorHint="@color/Black"
+            tools:ignore="Autofill" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Black" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:textColorHint="@color/Black">
+
+        <EditText
+            android:id="@+id/ProfileInputAddress"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Adresas"
+            android:inputType="textCapWords"
+            android:paddingTop="12dp"
+            android:singleLine="true"
+            android:textColorHint="@color/Black"
+            tools:ignore="Autofill" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Black" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/Black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Black" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/background_login"
+        android:text="Išsaugoti"
+        android:textColor="@color/cyan"  />
+
+</LinearLayout >
