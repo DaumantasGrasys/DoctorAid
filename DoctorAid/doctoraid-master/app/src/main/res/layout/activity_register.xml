@@ -46,8 +46,8 @@
                 <TextView
                     style="@style/headerText"
                     android:layout_gravity="center"
-                    android:text="Dalinkitės knygomis!"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginTop="40dp"
+                    android:text="Gaukite profesionalią daktaro pagalbą!" />
                 <include
                     layout="@layout/activity_register_2"/>
 

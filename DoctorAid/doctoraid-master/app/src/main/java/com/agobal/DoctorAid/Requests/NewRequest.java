@@ -119,6 +119,7 @@ public class NewRequest extends AppCompatActivity {
         SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE);
         pDialog.setTitleText("Pavyko!");
         pDialog.setContentText("Užklausa sukurta.");
+        pDialog.setConfirmText("Tęsti");
         pDialog.setConfirmClickListener(sweetAlertDialog -> {
                     pDialog.hide();
                     SweetAlertDialog pDialog2 = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);

@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:textColorHint="@color/Black">
 
-    <EditText
+        <EditText
         android:id="@+id/inputLastName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -59,13 +59,31 @@
         android:background="#05070a" />
 
 
-    <Spinner android:id="@+id/spinCity"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:textColor="#05070a"
-        android:padding="10dip"/>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:textColorHint="@color/Black">
 
+        <EditText
+            android:id="@+id/inputAddress"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Adresas"
+            android:inputType="textCapWords"
+            android:paddingTop="12dp"
+            android:singleLine="true"
+            android:textColorHint="@color/Black"
+            tools:ignore="Autofill" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#05070a" />
 
     <Button
         android:id="@+id/btnNext"

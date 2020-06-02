@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.agobal.DoctorAid.Chat.Chat_activity;
 import com.agobal.DoctorAid.Entities.UserData;
 import com.agobal.DoctorAid.MainActivity;
 import com.agobal.DoctorAid.R;
@@ -19,7 +21,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -62,6 +66,8 @@ public class ActiveRequest extends AppCompatActivity implements OnMapReadyCallba
     MapView mapView;
     GoogleMap map;
 
+    Marker marker;
+
 
     //private EditText etRequestDescription;
 
@@ -98,7 +104,32 @@ public class ActiveRequest extends AppCompatActivity implements OnMapReadyCallba
         final TextView ar_address = findViewById(R.id.ar_address);
 
 
-        mUserDatabase.addValueEventListener(new ValueEventListener() {
+        mUserRequestsDatabase.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                if(!dataSnapshot.hasChildren()){
+
+                    SweetAlertDialog pDialog = new SweetAlertDialog(ActiveRequest.this, SweetAlertDialog.SUCCESS_TYPE);
+                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#3498DB"));
+                    pDialog.setTitleText("Užklausa baigta");
+                    pDialog.setConfirmClickListener(sweetAlertDialog -> {
+                        Intent intent = new Intent(ActiveRequest.this, MainActivity.class);
+                        startActivity(intent);
+                    });
+                    pDialog.show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        }) ;
+
+        mUserDocorDatabase.addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -125,6 +156,50 @@ public class ActiveRequest extends AppCompatActivity implements OnMapReadyCallba
 
             }
         }) ;
+
+        FloatingActionButton fabChat = findViewById(R.id.ar_message);
+
+        fabChat.setOnClickListener(view -> {
+            Intent chatIntent = new Intent(this, Chat_activity.class);
+            chatIntent.putExtra("user_id", takenBy);
+            chatIntent.putExtra("user_name", firstName + " " + lastName);
+            startActivity(chatIntent);
+        });
+
+
+        mUserDocorDatabase.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+
+                String lat = dataSnapshot.child("lat").getValue(String.class);
+                String lon = dataSnapshot.child("lon").getValue(String.class);
+
+                if(map != null){
+
+                    LatLng Location = new LatLng(Double.valueOf(lat),
+                            Double.valueOf(lon));
+
+                    marker.remove();
+
+                    marker = map.addMarker(new MarkerOptions()
+                            .position(Location).title("")
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
+                            .draggable(false).visible(true));
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     @Override
@@ -132,20 +207,16 @@ public class ActiveRequest extends AppCompatActivity implements OnMapReadyCallba
         map = googleMap;
         map.getUiSettings().setMyLocationButtonEnabled(false);
         map.setMyLocationEnabled(true);
-       /*
-       //in old Api Needs to call MapsInitializer before doing any CameraUpdateFactory call
-        try {
-            MapsInitializer.initialize(this.getActivity());
-        } catch (GooglePlayServicesNotAvailableException e) {
-            e.printStackTrace();
-        }
-       */
-        //googleMap.addMarker(new MarkerOptions().position(new LatLng( 37.4219983, -122.084)).title("Marker"));
 
-        // Updates the location and zoom of the MapView
-        /*CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(43.1, -87.9), 10);
-        map.animateCamera(cameraUpdate);*/
-        map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(43.1, -87.9)));
+        LatLng Location = new LatLng(37.4219983,
+                -122.084);
+
+        marker = map.addMarker(new MarkerOptions()
+                .position(Location).title("")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
+                .draggable(false).visible(true));
+
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(Location, 16));
 
     }
 

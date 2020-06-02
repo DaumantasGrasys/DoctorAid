@@ -29,11 +29,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /**
@@ -87,6 +92,7 @@ public class doctorActiveFragment extends Fragment implements AsyncTaskCompleteL
         final TextView Da_RequestFullName = v.findViewById(R.id.ad_firstAndLastName2);
         final TextView Da_RequestDescription = v.findViewById(R.id.ad_description);
         final TextView Da_RequestAddress = v.findViewById(R.id.ad_distance);
+        final CircleImageView ProfilePic = v.findViewById(R.id.da_requesterPic);
 
 
         mUserRequestRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -98,13 +104,34 @@ public class doctorActiveFragment extends Fragment implements AsyncTaskCompleteL
                 lastName = dataSnapshot.child("lastName").getValue(String.class);
                 address = dataSnapshot.child("address").getValue(String.class);
 
+                final String image = dataSnapshot.child("image").getValue(String.class);
+
+                assert image != null;
+                if(!image.equals("default")){
+                    Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE)
+                            .placeholder(R.drawable.unknown_profile_pic)
+                            .into(ProfilePic, new Callback() {
+                                @Override
+                                public void onSuccess() {
+
+                                }
+
+                                @Override
+                                public void onError(Exception e) {
+                                    Picasso.get().load(image).placeholder(R.drawable.unknown_profile_pic).into(ProfilePic);
+                                }
+
+                            });
+
+                }
+
 
 
                 UserData userData = new UserData();
 
                 userData.setFirstName(firstName);
                 userData.setLastName(lastName);
-                userData.setLastName(address);
+                userData.setAddress(address);
 
 
                 Da_RequestFullName.setText(userData.firstName+" "+userData.lastName);

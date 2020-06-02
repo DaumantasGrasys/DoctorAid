@@ -51,7 +51,7 @@ public class UserDataActivity extends Activity{
 
         inputName = findViewById(R.id.inputName);
         inputLastName = findViewById(R.id.inputLastName);
-        inputAddress = findViewById(R.id.inputLastName);
+        inputAddress = findViewById(R.id.inputAddress);
         Button btnNext = findViewById(R.id.btnNext);
 
         btnNext.setOnClickListener(view -> {

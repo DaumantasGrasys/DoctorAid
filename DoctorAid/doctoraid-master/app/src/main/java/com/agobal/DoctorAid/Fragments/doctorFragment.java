@@ -92,7 +92,7 @@ public class doctorFragment extends Fragment implements AsyncTaskCompleteListene
         mRequests = FirebaseDatabase.getInstance().getReference().child("Requests");
 
 
-        mRequests.addListenerForSingleValueEvent(new ValueEventListener() {
+        mRequests.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

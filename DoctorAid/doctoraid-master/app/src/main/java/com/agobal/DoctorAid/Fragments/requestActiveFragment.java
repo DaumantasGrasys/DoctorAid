@@ -87,15 +87,21 @@ public class requestActiveFragment extends Fragment implements AsyncTaskComplete
 
 
                     //HelpRequest request = snapshot.getValue(HelpRequest.class);
+                if(!dataSnapshot.hasChildren()){
 
-                String isRequestActive = dataSnapshot.child("active").getValue().toString();
-                String isRequestTaken = dataSnapshot.child("taken").getValue().toString();
 
-                mCurrentRequestValue = dataSnapshot.getValue();
 
-               if (isRequestActive.equals("1") && isRequestTaken.equals("1")){
+                }
+                else {
 
-                   String requestTakenBy = dataSnapshot.child("takenBy").getValue().toString();
+                    String isRequestActive = dataSnapshot.child("active").getValue().toString();
+                    String isRequestTaken = dataSnapshot.child("taken").getValue().toString();
+
+                    mCurrentRequestValue = dataSnapshot.getValue();
+
+                    if (isRequestActive.equals("1") && isRequestTaken.equals("1")) {
+
+                        String requestTakenBy = dataSnapshot.child("takenBy").getValue().toString();
 
                         SweetAlertDialog pDialog = new SweetAlertDialog(v.getContext(), SweetAlertDialog.SUCCESS_TYPE);
                         pDialog.getProgressHelper().setBarColor(Color.parseColor("#3498DB"));
@@ -108,6 +114,7 @@ public class requestActiveFragment extends Fragment implements AsyncTaskComplete
                         pDialog.show();
 
                     }
+                }
             }
 
             @Override
